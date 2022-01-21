@@ -3,19 +3,11 @@ package Array;
 import java.util.Scanner;
 
 public class smoke {
-    public static boolean zeroSmoker(int[][] arr) {
-        for(int i=0;i<3;i++){
-            for (int j = 0; j < 3; j++) {
-                if(arr[i][j]==0);
-                return true ;
-            }
-        }
-        return false;
-    }
-    public static boolean isEveryoneSmoker(int[][] arr) {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (arr[i][j] == 0) {
+
+    public static boolean isEveryoneSame(int[][] arr){
+        for(int i=1;i<3;i++){
+            for(int j=0;j<3;j++){
+                if(arr[0][0] != arr[i][j]) {
                     return false;
                 }
             }
@@ -43,7 +35,7 @@ public class smoke {
         }
 
 
-        while (!isEveryoneSmoker(arr) && !zeroSmoker(arr)) {
+        while (!isEveryoneSame(arr)) {
             numberOfDays++;
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
